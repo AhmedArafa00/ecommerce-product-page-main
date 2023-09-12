@@ -1,0 +1,160 @@
+@use '../helpers/var' as *;
+.header {
+    width: 100%;
+    padding: 20px 20px;
+   .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+   .menu {
+    display: none;
+   }  
+   .left-nav {
+    display: flex;
+    align-items: center;
+   }
+   .logo {
+    margin-right: 3rem;
+    cursor: pointer;
+   }
+   .nav {
+    display: flex;
+    .close {
+        display: none;
+    }
+    li {
+        a {
+            color:$Dark-grayish-blue;
+            font-size: 16px;
+            padding: 35px 10px;
+            @media(min-width:769px) {
+                &:hover {
+                color: $Very-dark-blue;
+                border-bottom: 2px solid $Orange;
+                }
+            }
+        }
+    }
+   }
+   .icon {
+    display: flex;
+    align-items: center;
+    .avatar {
+        width: 45px;
+        height: 45px;
+        cursor: pointer;
+     
+        &:hover {
+         border-radius: 50%;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        -ms-border-radius: 50%;
+        -o-border-radius: 50%;
+        border:2px solid $Orange;
+}
+}
+.cart-icon {
+    margin-right: 1.3rem;
+    cursor: pointer;
+    position: relative;
+}
+.cart-box {
+    position: absolute;
+    top: 50px;
+    width: 280px;
+    height: 200px;
+    background: $White;
+    right: 0;
+    padding: 10px;
+    z-index: 555;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+    box-shadow: 0px 0px 10px 2px hsl(219deg 9% 45% / 15%);
+    display: none;
+    
+    h2 {
+        position: relative;
+        font-size: 16px;
+        &::after {
+         content: '';
+        position: absolute;
+        bottom: -15px;
+        width: 100%;
+        height: 1px;
+        background-color: black;
+        right: 0;
+}
+        }
+        .btn {
+            padding: 11px 20px;
+            background: $Orange;
+            border: none;
+            cursor: pointer;
+            border-radius: 6px;
+            margin-bottom: 5px;
+        }
+    }
+
+}
+@media (min-width:769px) {
+
+    &::after {
+        content: '';
+        border: 1px solid hsl(220deg 14% 75% / 25%);
+        position: absolute;
+        bottom: -25px;
+        width: calc(100% - 30px);
+    }
+}
+}
+    }
+
+@media (max-width:768px ) {
+    .header {
+        padding: 20px 10px;
+        .container {
+            .menu {
+                display: block;
+                padding-right: 20px;
+            }
+            .nav {
+            position: absolute;
+            flex-direction: column;
+            top: -20px;
+            left: -11px;
+            width: 230px;
+            height: 100vh;
+            background: $White;
+            padding: 15px 16px;
+            box-shadow: 0px 0px 10px 2px hsl(219deg 9% 45% / 15%);
+            z-index: 555;
+            display: none;
+            li {
+                margin-bottom: 25px;
+                a {
+                    color: $Very-dark-blue;
+                    font-weight: bold;
+                }
+            }
+            .close {
+                display: block;
+                padding-bottom: 40px;
+                cursor: pointer;
+            }
+            }
+            .icon {
+                .cart-box {
+                    top: 85px;
+                    margin: 0 20px;
+                }
+            }
+        }
+    }
+}
