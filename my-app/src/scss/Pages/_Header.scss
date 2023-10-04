@@ -68,7 +68,6 @@
     padding: 10px;
     z-index: 555;
     flex-direction: column;
-    justify-content: space-between;
     border-radius: 8px;
     -webkit-border-radius: 8px;
     -moz-border-radius: 8px;
@@ -83,7 +82,7 @@
         position: relative;
         font-size: 16px;
         &::after {
-         content: '';
+        content: '';
         position: absolute;
         bottom: -15px;
         width: 100%;
@@ -100,12 +99,29 @@
             border-radius: 6px;
             margin-bottom: 5px;
         }
+        .empty {
+            margin-top: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
       
     }
  
 
 }
-
+.cart {
+    position: relative;
+    span {
+    position: absolute;
+    width: 17px;
+    height: 15px;
+    background: orange;
+    top: -7px;
+    border-radius: 50%;
+    left: 8px
+    }
+}
 @media (min-width:769px) {
     &::after {
         content: '';

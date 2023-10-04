@@ -4,7 +4,7 @@ import Section from './Components/Section';
 function App() {
   return (
     <>
-      <Header />
+      <Header/>
       <Section />
     </>
   );

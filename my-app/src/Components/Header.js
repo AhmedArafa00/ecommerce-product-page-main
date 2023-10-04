@@ -8,6 +8,8 @@ import Close from '../images/icon-close.svg'
 const Header = () => {
   const [show, setShow] = useState(true)
   const [isOpen, setIsOpen] = useState(false)
+  const [cartItems, setCartItems] = useState(0);
+  const [productCount, setProductCount] = useState(0);
   return (
           <>
     <div className='header' >
@@ -15,12 +17,12 @@ const Header = () => {
         <div className='left-nav'>
           {
             !isOpen &&(<div className="menu" onClick={() => setIsOpen(true)}>
-            <img src={Menu}></img>
+            <img src={Menu} />
           </div>
           )}
           {
             isOpen &&( <div className='close' onClick={() => setIsOpen(false)}>
-            <img src={Close}></img>
+            <img src={Close} />
            </div> 
           )}
            <div className='logo'>
@@ -38,13 +40,26 @@ const Header = () => {
            </div>
            <div className='icon'>
             <div className='cart'>
-              <img className='cart-icon' src={Cart} onClick={() => setShow(!show)}></img>
+              <span>{cartItems === 0 ? "" : 1}</span>
+              <img className='cart-icon' src={Cart} onClick={() => setShow(!show)} />
               </div>
-             <img className='avatar' src={Avatar}></img> 
+             <img className='avatar' src={Avatar} />
            <div className={`icon-cart ${show ? "hidden" : "flex"}`}>
-                 <h2>Cart</h2>
-                 <div>Your cart is empty</div>
-                 <button className='btn'>Checkout</button>
+            {
+              cartItems === 0 ?( 
+                <>
+              <h2>Cart</h2>
+              <div className='empty'>Your cart is empty</div>
+              
+              
+              </>
+              ): 
+              <h1></h1>
+            }
+           
+             
+                 
+                 {/* <button className='btn'>Checkout</button> */}
                </div>
            </div>
       </div>
